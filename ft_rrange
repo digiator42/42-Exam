@@ -1,0 +1,15 @@
+#include <unistd.h>
+
+int     *ft_rrange(int start, int end)
+{
+	int len;
+	int *arr;
+	
+	len = end >= start ? end - start + 1 : start - end + 1;
+	arr = malloc(sizeof(len) * (len));
+	if(!arr)
+		return NULL;
+	while(len--)
+		arr[len] = (end >= start) ? start++ : start--;	
+	return arr;	
+}
